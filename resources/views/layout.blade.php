@@ -11,7 +11,9 @@
 </head>
 <body>
 <div class="container">
-    @include('partials.navbar')
+    <header class="header">
+        @include('partials.navbar')
+    </header>
     <div class="container-fluid">
         @yield('content')
     </div>
