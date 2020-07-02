@@ -25,6 +25,6 @@ class Task extends Model
 
     public function priorities()
     {
-        return $this->belongsToMany(TaskPriority::class)->withTimestamps();
+        return $this->belongsToMany(TaskPriority::class);
     }
 }
