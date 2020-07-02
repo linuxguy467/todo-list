@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  *
  * @property integer id
+ * @property integer user_id
  * @property string title
  * @property string description
  * @property boolean status
@@ -18,12 +19,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Task extends Model
 {
+    //protected $fillable = ['title', 'description', 'user_id'];
+    protected $guarded = [];
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function priorities()
+    public function task_priorities()
     {
         return $this->belongsToMany(TaskPriority::class);
     }

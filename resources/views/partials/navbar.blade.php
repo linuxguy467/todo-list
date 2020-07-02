@@ -8,7 +8,11 @@
         @auth
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="{{ route('tasks.show') }}" class="nav-link">View Tasks</a>
+                    @if (Request::path() === 'tasks')
+                        <a href="{{ route('tasks.create') }}" class="nav-link">Create Task</a>
+                    @else
+                        <a href="{{ route('app.dashboard') }}" class="nav-link">View Tasks</a>
+                    @endif
                 </li>
             </ul>
         @endauth
